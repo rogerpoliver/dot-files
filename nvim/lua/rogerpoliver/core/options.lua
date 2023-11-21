@@ -38,3 +38,4 @@ opt.splitbelow = true
 opt.iskeyword:append("-")
 
 
+vim.g.netrw_liststyle = 1
