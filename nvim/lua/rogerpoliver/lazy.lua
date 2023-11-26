@@ -13,4 +13,9 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Lazy will load every plugin
 -- from rogerpoliver/plugins folder
-require("lazy").setup("rogerpoliver.plugins")
+require("lazy").setup({
+  {import = "rogerpoliver.plugins"},
+  {import = "rogerpoliver.plugins.editor"},
+  {import = "rogerpoliver.plugins.lsp"},
+})
+

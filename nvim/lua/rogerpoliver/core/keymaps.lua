@@ -4,7 +4,7 @@ local keymap = vim.keymap -- for conciseness
 
 --General keymaps
 
-keymap.set("i", "jk", "<ESC>")
+-- keymap.set("i", "jk", "<ESC>")
 
 keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
 keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
