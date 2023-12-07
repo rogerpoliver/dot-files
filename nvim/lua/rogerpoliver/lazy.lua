@@ -16,5 +16,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   {import = "rogerpoliver.plugins.editor"},
   {import = "rogerpoliver.plugins.lsp"},
+  {import = "rogerpoliver.plugins.ai-tools"},
 })
 
