@@ -46,7 +46,7 @@ return {
       },
     }
 
-    lualine.setup({ 
+    lualine.setup({
       options = {
         theme = bubbles_theme,
         component_separators = '|',

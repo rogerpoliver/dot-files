@@ -39,5 +39,4 @@ opt.iskeyword:append("-")
 
 opt.laststatus = 3
 
-vim.g.netrw_liststyle = 1
-
+vim.g.netrw_liststyle = 3

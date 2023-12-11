@@ -1,7 +1,7 @@
 return {
   "prichrd/netrw.nvim",
   dependencies = {
-    "nvim-tree/nvim-web-devicons" 
+    "nvim-tree/nvim-web-devicons"
   },
   config = function ()
     local netrw = require("netrw")
