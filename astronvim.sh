@@ -1,18 +1,37 @@
 # Tree-sitter CLI
-cargo install tree-sitter-cli
+if ! command -v tree-sitter &> /dev/null; then
+    cargo install tree-sitter-cli
+else
+    echo "tree-sitter-cli is already installed"
+fi
 
 # Ripgrep
-brew install ripgrep
+if ! command -v rg &> /dev/null; then
+    brew install ripgrep
+else
+    echo "ripgrep is already installed"
+fi
 
 # Lazygit
-brew install lazygit
+if ! command -v lazygit &> /dev/null; then
+    brew install lazygit
+else
+    echo "lazygit is already installed"
+fi
 
 # Go Disk Usage (gdu)
-brew install gdu
+if ! command -v gdu &> /dev/null; then
+    brew install gdu
+else
+    echo "gdu is already installed"
+fi
 
 # Bottom (btm)
-brew install bottom
-
+if ! command -v btm &> /dev/null; then
+    brew install bottom
+else
+    echo "bottom is already installed"
+fi
 # Make a backup of your current nvim config (if exists)
 mv ~/.config/nvim ~/.config/nvim.bak
 
