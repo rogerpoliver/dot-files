@@ -25,7 +25,7 @@
             pkgs.neovim # Text editor
             pkgs.tmux # Terminal multiplexer
             pkgs.mkalias # Used to create alias for macOS apps
-            pkgs.bat # A cat(1) clone with wings.
+            pkgs.bat # A cat clone with wings.
             pkgs.fd # A simple, fast and user-friendly alternative to 'find'
             pkgs.ripgrep # Recursively searches directories for a regex pattern
             pkgs.git # Distributed version control system
@@ -46,6 +46,7 @@
             "discord" # Chat for communities and friends
             "nikitabobko/tap/aerospace" # Tiling Window Manager
             "qbittorrent" # BitTorrent client
+            "fisher" # A package manager for Fishell
           ];
           # onActivation.cleanup = "zap"; # Remove Homebrew packages not in the flake
           onActivation.autoUpdate = true; # Update Homebrew packages on activation
