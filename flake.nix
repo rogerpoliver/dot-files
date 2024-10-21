@@ -44,6 +44,7 @@
             "notion" # A tool for notes, tasks, wikis, and databases
             "spotify" # Music streaming service
             "discord" # Chat for communities and friends
+            "nikitabobko/tap/aerospace" # Tiling Window Manager
             "qbittorrent" # BitTorrent client
           ];
           # onActivation.cleanup = "zap"; # Remove Homebrew packages not in the flake
