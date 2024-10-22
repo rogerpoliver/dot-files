@@ -12,7 +12,11 @@ after-login-command = []
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = []
+after-startup-command = [
+    # JankyBorders has a built-in detection of already running process,
+    # so it won't be run twice on AeroSpace restart
+    'exec-and-forget borders active_color=0xffFF0000 inactive_color=0xff494d64 width=10.0',
+]
 
 # Start AeroSpace at login
 start-at-login = true
@@ -40,8 +44,8 @@ key-mapping.preset = 'qwerty'
 
 # Mouse follows focus when focused monitor changes
 # Drop it from your config, if you don't like this behavior
-# See https://nikitabobko.github.io/AeroSpace/guide#on-focus-changed-callbacks
-# See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
+# See: https://nikitabobko.github.io/AeroSpace/guide#on-focus-changed-callbacks
+# See: https://nikitabobko.github.io/AeroSpace/commands#move-mouse
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 on-focus-changed = ['move-mouse window-lazy-center']
 
@@ -53,17 +57,19 @@ on-focus-changed = ['move-mouse window-lazy-center']
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 5
-inner.vertical =   5
-outer.left =       5
-outer.bottom =     5
-outer.top =        5
-outer.right =      5
+inner.horizontal = 7
+inner.vertical = 7
+outer.left = 7
+outer.bottom = 7
+outer.top = 7
+outer.right = 7
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
 [mode.main.binding]
+cmd-h = []     # Disable "hide application"
+cmd-alt-h = [] # Disable "hide others"
 
 # All possible keys:
 # - Letters.        a, b, c, ..., z
@@ -104,83 +110,50 @@ ctrl-alt-l = 'move right'
 ctrl-alt-minus = 'resize smart -50'
 ctrl-alt-equal = 'resize smart +50'
 
+# See: https://nikitabobko.github.io/AeroSpace/commands#fullscreen
+ctrl-alt-cmd-f = 'fullscreen'
+
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-alt-1 = 'workspace 1'
-alt-2 = 'workspace 2'
-alt-3 = 'workspace 3'
-alt-4 = 'workspace 4'
-alt-5 = 'workspace 5'
-alt-6 = 'workspace 6'
-alt-7 = 'workspace 7'
-alt-8 = 'workspace 8'
-alt-9 = 'workspace 9'
-# alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
-# alt-b = 'workspace B'
-# alt-c = 'workspace C'
-# alt-d = 'workspace D'
-# alt-e = 'workspace E'
-# alt-f = 'workspace F'
-# alt-g = 'workspace G'
-# alt-i = 'workspace I'
-# alt-m = 'workspace M'
-# alt-n = 'workspace N'
-# alt-o = 'workspace O'
-# alt-p = 'workspace P'
-# alt-q = 'workspace Q'
-# alt-r = 'workspace R'
-# alt-s = 'workspace S'
-# alt-t = 'workspace T'
-# alt-u = 'workspace U'
-# alt-v = 'workspace V'
-# alt-w = 'workspace W'
-# alt-x = 'workspace X'
-# alt-y = 'workspace Y'
-# alt-z = 'workspace Z'
+# alt-1 = 'workspace 1'                                   # Free 1
+# alt-b = 'workspace B'                                   # Browser
+# alt-c = 'workspace C'                                   # Call
+# alt-o = 'workspace O'                                   # Outlook
+# alt-s = 'workspace S'                                   # Spotify
+# alt-t = 'workspace T'                                   # Terminal
+# alt-v = 'workspace V'                                   # Vscode
+# alt-w = 'workspace W'                                   # Webex
+# alt-leftSquareBracket = 'workspace --wrap-around prev'  # Go to Next Workspace
+# alt-rightSquareBracket = 'workspace --wrap-around next' # Go to Previous Workspace
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#summon-workspace
+ctrl-alt-1 = 'summon-workspace 1' # Free 1
+ctrl-alt-b = 'summon-workspace B' # Browser
+ctrl-alt-c = 'summon-workspace C' # Call
+ctrl-alt-o = 'summon-workspace O' # Outlook
+ctrl-alt-s = 'summon-workspace S' # Spotify
+ctrl-alt-t = 'summon-workspace T' # Terminal
+ctrl-alt-v = 'summon-workspace V' # Vscode
+ctrl-alt-w = 'summon-workspace W' # Webex
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-ctrl-alt-leftSquareBracket= 'move-node-to-workspace --wrap-around prev'
-ctrl-alt-rightSquareBracket= 'move-node-to-workspace --wrap-around next'
-
-alt-shift-1 = 'move-node-to-workspace 1'
-alt-shift-2 = 'move-node-to-workspace 2'
-alt-shift-3 = 'move-node-to-workspace 3'
-alt-shift-4 = 'move-node-to-workspace 4'
-alt-shift-5 = 'move-node-to-workspace 5'
-alt-shift-6 = 'move-node-to-workspace 6'
-alt-shift-7 = 'move-node-to-workspace 7'
-alt-shift-8 = 'move-node-to-workspace 8'
-alt-shift-9 = 'move-node-to-workspace 9'
-# alt-shift-a = 'move-node-to-workspace A'
-# alt-shift-b = 'move-node-to-workspace B'
-# alt-shift-c = 'move-node-to-workspace C'
-# alt-shift-d = 'move-node-to-workspace D'
-# alt-shift-e = 'move-node-to-workspace E'
-# alt-shift-f = 'move-node-to-workspace F'
-# alt-shift-g = 'move-node-to-workspace G'
-# alt-shift-i = 'move-node-to-workspace I'
-# alt-shift-m = 'move-node-to-workspace M'
-# alt-shift-n = 'move-node-to-workspace N'
-# alt-shift-o = 'move-node-to-workspace O'
-# alt-shift-p = 'move-node-to-workspace P'
-# alt-shift-q = 'move-node-to-workspace Q'
-# alt-shift-r = 'move-node-to-workspace R'
-# alt-shift-s = 'move-node-to-workspace S'
-# alt-shift-t = 'move-node-to-workspace T'
-# alt-shift-u = 'move-node-to-workspace U'
-# alt-shift-v = 'move-node-to-workspace V'
-# alt-shift-w = 'move-node-to-workspace W'
-# alt-shift-x = 'move-node-to-workspace X'
-# alt-shift-y = 'move-node-to-workspace Y'
-# alt-shift-z = 'move-node-to-workspace Z'
+alt-shift-1 = 'move-node-to-workspace 1' # Free 1
+alt-shift-b = 'move-node-to-workspace B' # Browser
+alt-shift-c = 'move-node-to-workspace C' # Call
+alt-shift-o = 'move-node-to-workspace O' # Outlook
+alt-shift-s = 'move-node-to-workspace S' # Spotify
+alt-shift-t = 'move-node-to-workspace T' # Terminal 
+alt-shift-v = 'move-node-to-workspace V' # Vscode
+alt-shift-w = 'move-node-to-workspace W' # Webex
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
+
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor        
-alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'  
+alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus-monitor
-alt-leftSquareBracket = 'focus-monitor --wrap-around prev'
-alt-rightSquareBracket = 'focus-monitor --wrap-around next'
+alt-ctrl-leftSquareBracket = 'focus-monitor --wrap-around prev'
+alt-ctrl-rightSquareBracket = 'focus-monitor --wrap-around next'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
@@ -191,15 +164,52 @@ alt-shift-semicolon = 'mode service'
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
 #s = ['layout sticky tiling', 'mode main'] # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
-f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+f = [
+    'layout floating tiling',
+    'mode main',
+] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
-
 alt-shift-h = ['join-with left', 'mode main']
 alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
+[[on-window-detected]] # Move Arc to workspace B
+if.app-id = 'company.thebrowser.Browser'
+run = 'move-node-to-workspace B'
 
-[[on-window-detected]]
+[[on-window-detected]] # Move Chrome to workspace B
+if.app-id = 'com.google.Chrome'
+run = 'move-node-to-workspace B'
+
+[[on-window-detected]] # Move Edge to workspace B
+if.app-id = 'com.microsoft.edgemac'
+run = 'move-node-to-workspace B'
+
+[[on-window-detected]] # Move Firefox to workspace B
+if.app-id = 'org.mozilla.firefox'
+run = 'move-node-to-workspace B'
+
+[[on-window-detected]] # Move Safari to workspace B
+if.app-id = 'com.apple.Safari'
+run = 'move-node-to-workspace B'
+
+[[on-window-detected]] # Move Outlook to workspace O
+if.app-id = 'com.microsoft.Outlook'
+run = 'move-node-to-workspace O'
+
+[[on-window-detected]] # Move Spotify to workspace S
+if.app-id = 'com.spotify.client'
+run = 'move-node-to-workspace S'
+
+[[on-window-detected]] # Move Kitty to workspace T
 if.app-id = 'net.kovidgoyal.kitty'
-run = 'move-node-to-workspace 9' # mnemonics T - Terminal
+run = 'move-node-to-workspace T'
+
+[[on-window-detected]] # Move Vscode to workspace V
+if.app-id = 'com.microsoft.VSCode'
+run = 'move-node-to-workspace V'
+
+[[on-window-detected]] # Move Webex to workspace W
+if.app-id = 'Cisco-Systems.Spark'
+run = 'move-node-to-workspace W'
