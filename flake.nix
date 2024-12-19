@@ -46,7 +46,7 @@
             "discord" # Chat for communities and friends
             "nikitabobko/tap/aerospace" # Tiling Window Manager
             "qbittorrent" # BitTorrent client
-            "fisher" # A package manager for Fishell
+            "karabiner-elements"
           ];
           # onActivation.cleanup = "zap"; # Remove Homebrew packages not in the flake
           onActivation.autoUpdate = true; # Update Homebrew packages on activation
